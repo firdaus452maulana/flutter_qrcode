@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_qrcode/generate_qrcode.dart';
+import 'package:flutter_qrcode/result_scan.dart';
+import 'package:flutter_qrcode/scan_qrcode.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 void main() {
@@ -15,7 +17,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MainMenu extends StatelessWidget {
+class MainMenu extends StatefulWidget {
+  @override
+  _MainMenuState createState() => _MainMenuState();
+}
+
+class _MainMenuState extends State<MainMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +33,7 @@ class MainMenu extends StatelessWidget {
       ),
       body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
                 child: Text(
@@ -43,8 +51,8 @@ class MainMenu extends StatelessWidget {
                 child: Text(
                     "Scan"
                 ),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => GenerateQrCode()));
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ScanQrCode()));
                 },
               )
             ],
@@ -53,6 +61,7 @@ class MainMenu extends StatelessWidget {
     );
   }
 }
+
 
 
 
