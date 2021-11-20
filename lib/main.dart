@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_qrcode/generate_qrcode.dart';
 import 'package:flutter_qrcode/result_scan.dart';
+import 'package:flutter_qrcode/scan_barcode.dart';
 import 'package:flutter_qrcode/scan_qrcode.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -54,7 +55,20 @@ class _MainMenuState extends State<MainMenu> {
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => ScanQrCode()));
                 },
-              )
+              ),
+
+              SizedBox(height: 12,),
+
+              RaisedButton(
+                child: Text(
+                    "Scan New"
+                ),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return ScanBarcode();
+                  }));
+                },
+              ),
             ],
           )
       ),
