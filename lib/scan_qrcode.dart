@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_qrcode/result_scan.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
@@ -48,7 +50,10 @@ class _ScanQrCodeState extends State<ScanQrCode> {
   void onQRViewCreated(QRViewController controller) {
     setState(() {
       this.controller = controller;
-      controller.flipCamera();
+      // controller.flipCamera();
+      Timer(Duration(seconds: 10), (){
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ResultScan(data: "Data Kosong",)));
+      });
     });
 
     controller.scannedDataStream.listen((barcode) {

@@ -56,19 +56,6 @@ class _MainMenuState extends State<MainMenu> {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => ScanQrCode()));
                 },
               ),
-
-              SizedBox(height: 12,),
-
-              RaisedButton(
-                child: Text(
-                    "Scan New"
-                ),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return ScanBarcode();
-                  }));
-                },
-              ),
             ],
           )
       ),
